@@ -1,0 +1,132 @@
+:root {
+	--orange: hsl(31, 77%, 52%);
+	--teal: hsl(184, 100%, 22%);
+	--darkgreen: hsl(179, 100%, 13%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Lexend Deca', sans-serif;
+	padding: 100px 24px;
+}
+
+main {
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	/* gap: 30px; */
+	padding: 50px;
+	padding-right: 53px;
+	max-width: 329px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+/* Modificadores de card */
+.card_color_orange {
+	background-color: var(--orange);
+}
+.card_color_teal {
+	background-color: var(--teal);
+}
+.card_color_darkgreen {
+	background-color: var(--darkgreen);
+}
+
+/*? Todos los elementos dentro de la clase 'card' que NO sean el ultimo elemento hijo*/
+.card > *:not(:last-child) {
+	margin-bottom: 40px;
+}
+
+.card__name {
+	text-transform: uppercase;
+	font-family: 'Big Shoulders Display', cursive;
+	font-size: 48px;
+	color: rgba(255, 255, 255, 1);
+}
+
+.card__logo {
+	display: block;
+	width: 64px;
+	height: 40px;
+}
+
+/*? Bloque: card
+/*?	Elemento: logo
+/*?	Modificador: sedans, suvs, luxury	
+*/
+.card__logo_sedans {
+	background-image: url(./images/icon-sedans.svg);
+}
+
+.card__logo_suvs {
+	background-image: url(./images/icon-suvs.svg);
+}
+
+.card__logo_luxury {
+	background-image: url(./images/icon-luxury.svg);
+}
+
+.card__description {
+	/* display: -webkit-inline-box;
+	-webkit-line-clamp: 5; */
+	line-height: 1.8;
+	font-size: 15px;
+}
+
+.card__button {
+	width: 65%;
+	padding: 18px 20px;
+	border-radius: 30px;
+	border: 2px solid transparent;
+	background-color: #fff;
+	font-family: 'Lexend Deca', sans-serif;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.card__button:hover {
+	background-color: inherit;
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+/* Modificadores del botón */
+.card__button_color_orange {
+	color: var(--orange);
+}
+
+.card__button_color_teal {
+	color: var(--teal);
+}
+
+.card__button_color_darkgreen {
+	color: var(--darkgreen);
+}
+
+.attribution{
+	position: absolute;
+	bottom: 0;
+}
+
+@media (min-width: 800px) {
+	main {
+		display: flex;
+		flex-direction: row;
+	}
+}
